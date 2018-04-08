@@ -18,35 +18,77 @@ public class Counter {
 	private String strToken;
 	public ArrayList<String>words=new ArrayList<String>();
 	public Map<String,Integer> map=new TreeMap<String,Integer>();//存放单词数及对应的词频
-	Counter(String filepath,String outputpath){
+	Counter(String filepath,String outputpath)
+	{
 		this.filepath=filepath;
 		this.outputpath=outputpath;
 	}
+	Counter(){
+		
+	}
+	public String getFilepath() {
+		return filepath;
+	}
+
+	public void setFilepath(String filepath) {
+		this.filepath = filepath;
+	}
+
+	public String getOutputpath() {
+		return outputpath;
+	}
+
+	public void setOutputpath(String outputpath) {
+		this.outputpath = outputpath;
+	}
 	
-	public void filwWriter()throws IOException{ //结果写到输出文件中
+	public StringBuffer getBuffer() {
+		return buffer;
+	}
+
+	public void setBuffer(StringBuffer buffer) {
+		this.buffer = buffer;
+	}
+
+	public Map<String, Integer> getMap() {
+		return map;
+	}
+
+	public void setMap(Map<String, Integer> map) {
+		this.map = map;
+	}
+
+	/*public void fileWriter()throws IOException
+	{ //结果写到输出文件中
 		 File file=new File(outputpath);
 		 FileWriter fw = new FileWriter(file,false);
 		 BufferedWriter bw = new BufferedWriter(fw);
 		 List<Map.Entry<String,Integer>> list = new ArrayList<Map.Entry<String,Integer>>(map.entrySet());//实现按Value排序
 	        //然后通过比较器来实现排序
-	        Collections.sort(list,new Comparator<Map.Entry<String,Integer>>() {
+	        Collections.sort(list,new Comparator<Map.Entry<String,Integer>>()
+	        {
 	            //降序排序
 	            public int compare(Entry<String, Integer> o1,
-	                    Entry<String, Integer> o2) {
+	                    Entry<String, Integer> o2) 
+	            {
 	            	int p1=o1.getValue();
 	            	int p2=o2.getValue();
 	            	int p=p1-p2;
-	            	if(p>0){
+	            	if(p>0)
+	            	{
 	            		return -1;
-	            		}
-	            		else if(p==0){
+	            		
+	            	}
+	            		else if(p==0)
+	            		{
 	            		return 0;
 	            		}
 	            		else
 	            		return 1;
-	            		}
-	             });
-		 for (Map.Entry<String, Integer> mapping:list) {  //向result.txt写结果
+	            }
+	          });
+		 for (Map.Entry<String, Integer> mapping:list) 
+		    {  //向result.txt写结果
 			 int temp=0;
 			 if(temp<100)
 			 {
@@ -77,7 +119,7 @@ public class Counter {
 			e.printStackTrace();
 		}
 		
-	}
+	}*/
 	public void getChar() {
 		ch = buffer.charAt(i);
 		i++;
@@ -139,6 +181,8 @@ public class Counter {
 		return flag;
 		
 	}
+
+
 	boolean isValid(){//单词有效性检验
 		boolean flag=true;
 		     for(int j=0;j<strToken.length();j++){
