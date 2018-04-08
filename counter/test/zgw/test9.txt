@@ -1,0 +1,3 @@
+ablue 15
+car 9
+apple 3
